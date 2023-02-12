@@ -1,14 +1,15 @@
 import * as Yup from 'yup'
 import { useFormik } from 'formik';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useCallback } from "react"
 import { Button } from "../components/Button"
 import { TextInput } from "../components/TextInput"
 
 export const Login = () => {
+    const navigate = useNavigate()
 
     const handleOnSubmit = (values: { email: string, password: string }) => {
-        alert(`Logged in as ${values.email}!`);
+        navigate('dashboard')
     };
 
     const formik = useFormik({
