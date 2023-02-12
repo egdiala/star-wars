@@ -1,0 +1,5 @@
+@import url("./index.css");
+
+#root {
+  @apply w-screen h-screen;
+}
