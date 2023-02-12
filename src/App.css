@@ -1,5 +1,5 @@
 @import url("./index.css");
 
 #root {
-  @apply w-screen h-screen font-inter;
+  @apply relative flex h-screen font-inter;
 }
