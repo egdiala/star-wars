@@ -7,7 +7,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main>
+      <main className='relative'>
         <Routes>
           <Route path='/' element={<Login />} errorElement={<NotFound />} />
           <Route path='dashboard' element={<Dashboard />} errorElement={<NotFound />} />
