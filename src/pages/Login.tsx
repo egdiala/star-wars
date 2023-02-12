@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 import { useFormik } from 'formik';
 import { Link } from "react-router-dom"
-import React, { useCallback } from "react"
+import { useCallback } from "react"
 import { Button } from "../components/Button"
 import { TextInput } from "../components/TextInput"
 
