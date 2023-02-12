@@ -1,6 +1,6 @@
 interface ButtonProps {
     label: string
-    onClick: () => void
+    onClick?: () => void
     [x:string]: any
 }
 
