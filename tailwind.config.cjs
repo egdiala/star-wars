@@ -24,7 +24,8 @@ module.exports = {
         100: '#00992B',
         50: '#A9FFE0'
       },
-      error: '#FFA9EC',
+      pink: '#FFA9EC',
+      error: '#DC2626',
       warning: '#FDFFA9',
       dark: '#0B2253',
       white: '#FFFFFF',
