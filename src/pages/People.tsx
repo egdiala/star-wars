@@ -51,7 +51,7 @@ export const People = () => {
                                                     <td className="pl-6 py-6">{person.birth_year}</td>
                                                     <td className="pl-6 py-6">{person.gender}</td>
                                                     <td className="pl-6 py-6">{person.hair_color}</td>
-                                                    <td className="pl-6 py-6">{person.height} Meters</td>
+                                                    <td className="pl-6 py-6">{person.height} CM</td>
                                                     <td className="pl-6 py-6">{person.created.split('T')[0]}</td>
                                                 </tr>
                                             )
