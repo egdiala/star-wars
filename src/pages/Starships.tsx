@@ -45,7 +45,7 @@ export const Starships = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             starships.map((starship, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5">
                                                     <td className="pl-6 py-6">{starship.name}</td>
                                                     <td className="pl-6 py-6">{starship.model}</td>
                                                     <td className="pl-6 py-6">{starship.starship_class}</td>

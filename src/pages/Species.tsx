@@ -14,7 +14,6 @@ export const Species = () => {
             .json(json => {
                 setSpecies(json.results)
                 setLoading(false)
-                console.log(json)
             });
         }
         getSpecies()
@@ -46,7 +45,7 @@ export const Species = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             species.map((specie, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5">
                                                     <td className="pl-6 py-6">{specie.name}</td>
                                                     <td className="pl-6 py-6">{specie.classification}</td>
                                                     <td className="pl-6 py-6">{specie.eye_colors}</td>
