@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { Login } from './pages/Login'
+import { Login } from './pages/auth/Login'
 import { NotFound } from './pages/NotFound'
 import { Dashboard } from './pages/Dashboard'
 import { Starships } from './pages/Starships'
