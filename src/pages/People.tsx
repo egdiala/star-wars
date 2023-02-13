@@ -1,7 +1,6 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-import DashboardLayout from "../layouts/DashboardLayout"
 
 export const People = () => {
     const navigate = useNavigate()
@@ -22,7 +21,6 @@ export const People = () => {
     }, []);
 
     return <>
-        <DashboardLayout>
             <div className="grid gap-8">
                 <h1 className="text-grey-10 text-base">People</h1>
                 {
@@ -62,6 +60,5 @@ export const People = () => {
                         </div>
                 }
             </div>
-        </DashboardLayout>
     </>
 }

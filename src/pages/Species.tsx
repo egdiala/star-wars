@@ -1,6 +1,5 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
-import DashboardLayout from "../layouts/DashboardLayout"
 
 export const Species = () => {
     const [species, setSpecies] = useState<Array<any>>([])
@@ -20,7 +19,6 @@ export const Species = () => {
     }, []);
 
     return <>
-        <DashboardLayout>
             <div className="grid gap-8">
                 <h1 className="text-grey-10 text-base">Species</h1>
                 {
@@ -60,6 +58,5 @@ export const Species = () => {
                         </div>
                 }
             </div>
-        </DashboardLayout>
     </>
 }

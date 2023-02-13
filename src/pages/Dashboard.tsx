@@ -48,7 +48,6 @@ export const Dashboard = () => {
     ] satisfies InfoCardProps[]
 
     return <>
-        <DashboardLayout>
             <div className="grid gap-20">
                 <div className="flex items-center gap-14">
                     {
@@ -97,6 +96,5 @@ export const Dashboard = () => {
                     }
                 </div>
             </div>
-        </DashboardLayout>
     </>
 }

@@ -1,6 +1,5 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
-import DashboardLayout from "../layouts/DashboardLayout"
 
 export const Starships = () => {
     const [starships, setStarships] = useState<Array<any>>([])
@@ -20,7 +19,6 @@ export const Starships = () => {
     }, []);
 
     return <>
-        <DashboardLayout>
             <div className="grid gap-8">
                 <h1 className="text-grey-10 text-base">Starships</h1>
                 {
@@ -60,6 +58,5 @@ export const Starships = () => {
                         </div>
                 }
             </div>
-        </DashboardLayout>
     </>
 }
