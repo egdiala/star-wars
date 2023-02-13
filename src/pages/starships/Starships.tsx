@@ -1,9 +1,16 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 
 export const Starships = () => {
+    const navigate = useNavigate()
     const [starships, setStarships] = useState<Array<any>>([])
     const [isLoading, setLoading] = useState<boolean>(false)
+
+    const goToView = (url: string) => {
+        let splitUrl = url.split('/')
+        navigate(`/starships/view/${splitUrl[splitUrl.length - 2]}`)
+    }
 
     useEffect(() => {
         const getStarships = () => {
@@ -43,7 +50,7 @@ export const Starships = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             starships.map((starship, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5">
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5" onClick={() => goToView(starship.url)}>
                                                     <td className="pl-6 py-6">{starship.name}</td>
                                                     <td className="pl-6 py-6">{starship.model}</td>
                                                     <td className="pl-6 py-6">{starship.starship_class}</td>

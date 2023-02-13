@@ -1,9 +1,16 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 
 export const Species = () => {
+    const navigate = useNavigate()
     const [species, setSpecies] = useState<Array<any>>([])
     const [isLoading, setLoading] = useState<boolean>(false)
+
+    const goToView = (url: string) => {
+        let splitUrl = url.split('/')
+        navigate(`/species/view/${splitUrl[splitUrl.length - 2]}`)
+    }
 
     useEffect(() => {
         const getSpecies = () => {
@@ -43,7 +50,7 @@ export const Species = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             species.map((specie, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5">
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5" onClick={() => goToView(specie.url)}>
                                                     <td className="pl-6 py-6">{specie.name}</td>
                                                     <td className="pl-6 py-6">{specie.classification}</td>
                                                     <td className="pl-6 py-6">{specie.eye_colors}</td>

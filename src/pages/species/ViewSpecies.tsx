@@ -3,22 +3,22 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { ViewContent } from "../../components/ViewContent";
 
-export const ViewDashboard = () => {
+export const ViewSpecies = () => {
     const { id } = useParams()
-    const [film, setFilm] = useState<any>({})
+    const [person, setPerson] = useState<any>({})
     const [isLoading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        const getFilm = () => {
+        const getPerson = () => {
             setLoading(true)
-            wretch(`${import.meta.env.VITE_BASE_URL}/films/${id}`)
+            wretch(`${import.meta.env.VITE_BASE_URL}/species/${id}`)
             .get()
             .json(json => {
-                setFilm(json)
+                setPerson(json)
                 setLoading(false)
             });
         }
-        getFilm()
+        getPerson()
     }, []);
 
     return <>
@@ -26,7 +26,7 @@ export const ViewDashboard = () => {
             {
                 isLoading
                     ? <div className="w-full mx-auto text-center">Loading...</div>
-                    : <ViewContent title={film.title} text={[film.director, film.producer, film.release_date]} />
+                    : <ViewContent title={person.name} image="" />
             }
             </div>
     </>
