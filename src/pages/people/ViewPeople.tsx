@@ -26,7 +26,25 @@ export const ViewPeople = () => {
             {
                 isLoading
                     ? <div className="w-full mx-auto text-center">Loading...</div>
-                    : <ViewContent title={person.name} image="" />
+                    : <ViewContent>
+                        <div className="grid gap-7">
+                            <h2 className="font-bold text-5xl text-black">{person.name}</h2>
+                            <div className="grid gap-1 content-start">
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Gender: {person.gender}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Year of Birth: {person.birth_year}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Skin color: {person.skin_color}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Height: {person.height}CM
+                                </span>
+                            </div>
+                        </div>
+                    </ViewContent>
             }
             </div>
     </>

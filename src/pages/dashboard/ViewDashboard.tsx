@@ -26,7 +26,22 @@ export const ViewDashboard = () => {
             {
                 isLoading
                     ? <div className="w-full mx-auto text-center">Loading...</div>
-                    : <ViewContent title={film.title} text={[film.director, film.producer, film.release_date]} />
+                    : <ViewContent>
+                        <div className="grid gap-7">
+                            <h2 className="font-bold text-5xl text-black">{film.title}</h2>
+                            <div className="grid gap-1 content-start">
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Director: {film.director}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Producer: {film.producer}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Release Date: {film.release_date}
+                                </span>
+                            </div>
+                        </div>
+                    </ViewContent>
             }
             </div>
     </>

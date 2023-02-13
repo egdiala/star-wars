@@ -5,20 +5,20 @@ import { ViewContent } from "../../components/ViewContent";
 
 export const ViewSpecies = () => {
     const { id } = useParams()
-    const [person, setPerson] = useState<any>({})
+    const [specie, setSpecie] = useState<any>({ })
     const [isLoading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
-        const getPerson = () => {
+        const getSpecie = () => {
             setLoading(true)
             wretch(`${import.meta.env.VITE_BASE_URL}/species/${id}`)
             .get()
             .json(json => {
-                setPerson(json)
+                setSpecie(json)
                 setLoading(false)
             });
         }
-        getPerson()
+        getSpecie()
     }, []);
 
     return <>
@@ -26,7 +26,25 @@ export const ViewSpecies = () => {
             {
                 isLoading
                     ? <div className="w-full mx-auto text-center">Loading...</div>
-                    : <ViewContent title={person.name} image="" />
+                    : <ViewContent>
+                        <div className="grid gap-7">
+                            <h2 className="font-bold text-5xl text-black">{specie.name}</h2>
+                            <div className="grid gap-1 content-start">
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Designation: {specie.designation}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Language: {specie.language}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Eye Colors: {specie.eye_colors}
+                                </span>
+                                <span className="font-medium text-base text-grey-500 capitalize">
+                                    Average Lifespan: {specie.average_lifespan}
+                                </span>
+                            </div>
+                        </div>
+                    </ViewContent>
             }
             </div>
     </>
