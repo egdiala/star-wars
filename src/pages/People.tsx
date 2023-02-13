@@ -7,6 +7,11 @@ export const People = () => {
     const [people, setPeople] = useState<Array<any>>([])
     const [isLoading, setLoading] = useState<boolean>(false)
 
+    const goToView = (url: string) => {
+        let splitUrl = url.split('/')
+        navigate(`/people/view/${splitUrl[splitUrl.length - 2]}`)
+    }
+
     useEffect(() => {
         const getPeople = () => {
             setLoading(true)
@@ -45,7 +50,7 @@ export const People = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             people.map((person, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5" onClick={() => navigate('/people/view')}>
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5" onClick={() => goToView(person.url)}>
                                                     <td className="pl-6 py-6">{person.name}</td>
                                                     <td className="pl-6 py-6">{person.birth_year}</td>
                                                     <td className="pl-6 py-6">{person.gender}</td>

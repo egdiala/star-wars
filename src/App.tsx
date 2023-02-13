@@ -20,7 +20,7 @@ function App() {
           <Route path='starships' element={<Starships />} errorElement={<NotFound />} />
           <Route>
             <Route index path='people' element={<People />} errorElement={<NotFound />} />
-            <Route path='/people/view' element={<View />} errorElement={<NotFound />} />
+            <Route path='/people/view/:id' element={<View />} errorElement={<NotFound />} />
           </Route>
           <Route path='species' element={<Species />} errorElement={<NotFound />} />
         </Route>
