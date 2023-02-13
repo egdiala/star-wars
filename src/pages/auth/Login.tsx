@@ -37,6 +37,11 @@ export const Login = () => {
         }),
         [formik]
     );
+
+    const getInputValue = (key: any, event: Event) => {
+        let inputElement = (event.target) as HTMLInputElement
+        setInputValue(key, inputElement)
+    }
     
     return <>
         <LoginLayout>
@@ -54,8 +59,8 @@ export const Login = () => {
                                 </div>
                                 <div className="grid gap-8">
                                     <div className="grid content-start gap-6">
-                                        <TextInput type="email" label="Email Address" name="email" error={formik.errors.email!} onChange={(e: Event) => setInputValue("email", e.target)} value={formik.values.email} />
-                                        <TextInput type="password" label="Password" name="password" error={formik.errors.password!} onChange={(e: Event) => setInputValue("password", e.target)} value={formik.values.password} />
+                                        <TextInput type="email" label="Email Address" name="email" error={formik.errors.email!} onChange={(e: Event) => getInputValue("email", e)} value={formik.values.email} />
+                                        <TextInput type="password" label="Password" name="password" error={formik.errors.password!} onChange={(e: Event) => getInputValue("password", e)} value={formik.values.password} />
                                     </div>
                                     <div className="grid content-start justify-items-center gap-6">
                                         <Button type="submit" label="Log in" disabled={!formik.isValid} />
