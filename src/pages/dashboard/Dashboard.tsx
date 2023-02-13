@@ -1,11 +1,17 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
-import { InfoCard, InfoCardProps } from "../components/InfoCard"
-import DashboardLayout from "../layouts/DashboardLayout"
+import { useNavigate } from "react-router-dom"
+import { InfoCard, InfoCardProps } from "../../components/InfoCard"
 
 export const Dashboard = () => {
+    const navigate = useNavigate()
     const [films, setFilms] = useState<Array<any>>([])
     const [isLoading, setLoading] = useState<boolean>(false)
+
+    const goToView = (url: string) => {
+        let splitUrl = url.split('/')
+        navigate(`/dashboard/view/${splitUrl[splitUrl.length - 2]}`)
+    }
 
     useEffect(() => {
         const getFilms = () => {
@@ -80,7 +86,7 @@ export const Dashboard = () => {
                                                 <tr><td>No films found</td></tr>
                                                 : 
                                                 films.map((film, index) => 
-                                                    <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5 rounded-md">
+                                                    <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5 rounded-md" onClick={() => goToView(film.url)}>
                                                         <td className="pl-6 py-6">{film.title}</td>
                                                         <td className="pl-6 py-6">{film.release_date}</td>
                                                         <td className="pl-6 py-6">{film.director}</td>
