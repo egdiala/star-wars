@@ -42,7 +42,7 @@ export const Starships = () => {
                                 <tbody>
                                     {
                                         !starships.length ?
-                                            <div>No films found</div>
+                                            <tr><td>No films found</td></tr>
                                             : 
                                             starships.map((starship, index) => 
                                                 <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">

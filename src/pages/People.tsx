@@ -43,7 +43,7 @@ export const People = () => {
                                 <tbody>
                                     {
                                         !people.length ?
-                                            <div>No films found</div>
+                                            <tr><td>No films found</td></tr>
                                             : 
                                             people.map((person, index) => 
                                                 <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">
