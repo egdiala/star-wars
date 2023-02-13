@@ -2,9 +2,9 @@ import * as Yup from 'yup'
 import { useFormik } from 'formik';
 import { Link, useNavigate } from "react-router-dom"
 import { useCallback } from "react"
-import { Button } from "../components/Button"
-import { TextInput } from "../components/TextInput"
-import LoginLayout from '../layouts/LoginLayout';
+import { Button } from "../../components/Button"
+import { TextInput } from "../../components/TextInput"
+import LoginLayout from '../../layouts/LoginLayout';
 
 export const Login = () => {
     const navigate = useNavigate()
