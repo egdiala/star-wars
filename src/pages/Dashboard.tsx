@@ -78,10 +78,10 @@ export const Dashboard = () => {
                                     <tbody>
                                         {
                                             !films.length ?
-                                                <div>No films found</div>
+                                                <tr><td>No films found</td></tr>
                                                 : 
                                                 films.map((film, index) => 
-                                                    <tr className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">
+                                                    <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 last:border-b-grey-200">
                                                         <td className="pl-6 py-6">{film.title}</td>
                                                         <td className="pl-6 py-6">{film.release_date}</td>
                                                         <td className="pl-6 py-6">{film.director}</td>
