@@ -55,7 +55,7 @@ export const Dashboard = () => {
 
     return <>
             <div className="grid gap-20">
-                <div className="flex items-center gap-14">
+                <div className="flex flex-wrap items-center gap-14">
                     {
                         cards.map((card, index) =>
                             <InfoCard key={index.toString()} title={card.title} number={card.number} description={card.description} color={card.color} />
