@@ -1,8 +1,10 @@
 import wretch from "wretch"
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import DashboardLayout from "../layouts/DashboardLayout"
 
 export const People = () => {
+    const navigate = useNavigate()
     const [people, setPeople] = useState<Array<any>>([])
     const [isLoading, setLoading] = useState<boolean>(false)
 
@@ -45,7 +47,7 @@ export const People = () => {
                                             <tr><td>No films found</td></tr>
                                             : 
                                             people.map((person, index) => 
-                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5">
+                                                <tr key={index.toString()} className="text-grey-500 text-left font-medium text-base border-b last:border-b-0 border-b-grey-200 hover:bg-white cursor-pointer bg-grey-10/5" onClick={() => navigate('/people/view')}>
                                                     <td className="pl-6 py-6">{person.name}</td>
                                                     <td className="pl-6 py-6">{person.birth_year}</td>
                                                     <td className="pl-6 py-6">{person.gender}</td>
